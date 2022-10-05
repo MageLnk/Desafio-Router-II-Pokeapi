@@ -66,6 +66,12 @@ a:active {
 
 .footer-container {
   grid-area: footer;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem 0 0;
 }
 
 .app-container {
