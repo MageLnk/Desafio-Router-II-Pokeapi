@@ -5,7 +5,7 @@ import GeneralContext from ".";
 import apiCall from "../../api/apiCall";
 
 const GeneralContextProvider = ({ children }) => {
-  const [test, setTest] = useState(true);
+  const [data, setData] = useState("nada");
 
   const exampleUseApiCall = async (userId) => {
     try {
@@ -17,12 +17,12 @@ const GeneralContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    //console.log(
-    //  "Una buen ejemplo para traer data desde una Api al momento de cargar la app, es usar el useEffect acá"
-    //);
+    console.log(
+      "Una buen ejemplo para traer data desde una Api al momento de cargar la app, es usar el useEffect acá"
+    );
   }, []);
 
-  return <GeneralContext.Provider value={{ test, setTest }}>{children}</GeneralContext.Provider>;
+  return <GeneralContext.Provider value={{ data }}>{children}</GeneralContext.Provider>;
 };
 
 export default GeneralContextProvider;

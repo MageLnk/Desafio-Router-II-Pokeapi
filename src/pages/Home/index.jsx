@@ -1,12 +1,10 @@
-import { Footer, Header, HomeContent } from "../../Components/";
+import { HomeContent } from "../../Components/";
 
 const Home = () => {
   return (
-    <>
-      <Header />
+    <div className="home-page-container">
       <HomeContent />
-      <Footer />
-    </>
+    </div>
   );
 };
 
