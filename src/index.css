@@ -12,3 +12,71 @@ a:active {
   text-decoration: none;
   color: inherit;
 }
+
+.navbar-container {
+  grid-area: navbar;
+  background-color: #dc3545;
+  color: #ffffff8c;
+  padding: 0 1rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 17px;
+}
+.navbar-container .navbar-links-container {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-container .navbar-links-container .navbar-home {
+  font-size: 20px;
+  color: #ffc107;
+  font-weight: 600;
+}
+.navbar-container .navbar-links-container .navbar-options {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 0 0 2rem;
+  width: 100%;
+}
+.navbar-search-container {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  height: 2.5rem;
+}
+.navbar-search-container input {
+  border-radius: 10px;
+  width: 50%;
+  margin: 0 0.5rem 0 0;
+  border: none;
+}
+.navbar-search-container button {
+  border-radius: 10px;
+  width: 50%;
+  margin: 0 0 0 0.5rem;
+  background-color: #ffc107;
+  border: none;
+}
+
+.home-page-container {
+  grid-area: main-content;
+}
+
+.footer-container {
+  grid-area: footer;
+}
+
+.app-container {
+  display: grid;
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  grid-template-areas:
+    "navbar"
+    "main-content"
+    "footer";
+  grid-template-rows: 3.5rem 96% 4rem;
+  grid-template-columns: 100%;
+}
