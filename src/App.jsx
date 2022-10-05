@@ -10,14 +10,14 @@ const App = () => {
   return (
     <GeneralContext>
       <div className="app-container">
-        <NavBar />
         <BrowserRouter>
+          <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
-        <Footer />
       </div>
     </GeneralContext>
   );
