@@ -1,28 +1,55 @@
-import { Link } from "react-router-dom";
-
+import { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
+// Context
+import GeneralContext from "../../Context/GeneralContext";
+// App
 const NavBar = () => {
+  const [inputValue, setInputValue] = useState("");
+  const { doSearchByUserInput } = useContext(GeneralContext);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    doSearchByUserInput(inputValue);
+    setInputValue("");
+  };
   return (
     <div className="navbar-container">
       <div className="navbar-links-container">
-        <Link to="/">
+        <NavLink to="/">
           <span className="navbar-home">PokeDex</span>
-        </Link>
+        </NavLink>
         <div className="navbar-options">
-          <Link to="/pokemons">
-            <span>Pokemones</span>
-          </Link>
-          <Link to="favorites">
-            <span>Favoritos</span>
-          </Link>
-          <Link to="/types">
-            <span>Tipos</span>
-          </Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "navbar-option-active" : "")}
+            to="/pokemons"
+          >
+            Pokemones
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "navbar-option-active" : "")}
+            to="favorites"
+          >
+            Favoritos
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "navbar-option-active" : "")}
+            to="/types"
+          >
+            Tipos
+          </NavLink>
         </div>
       </div>
-      <div className="navbar-search-container">
-        <input placeholder="Pokemon" />
-        <button>Buscar</button>
-      </div>
+      <form
+        typeof="submit"
+        className="navbar-search-container"
+        onSubmit={(event) => handleSubmit(event)}
+      >
+        <input
+          value={inputValue}
+          placeholder="Pokemon"
+          onChange={({ target }) => setInputValue(target.value)}
+        />
+        <button onClick={(event) => handleSubmit(event)}>Buscar</button>
+      </form>
     </div>
   );
 };
