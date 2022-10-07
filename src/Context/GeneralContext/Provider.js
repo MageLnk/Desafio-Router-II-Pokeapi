@@ -7,6 +7,10 @@ import GeneralContext from ".";
 const GeneralContextProvider = ({ children }) => {
   const [data, setData] = useState("nada");
 
+  const doSearchByUserInput = (inputData) => {
+    console.log("Temporal Log, for future implement", inputData);
+  };
+
   //const exampleUseApiCall = async (userId) => {
   //  try {
   //    const data = await apiCall({ url: `http://insertApiAddress` });
@@ -22,7 +26,11 @@ const GeneralContextProvider = ({ children }) => {
     );
   }, []);
 
-  return <GeneralContext.Provider value={{ data, setData }}>{children}</GeneralContext.Provider>;
+  return (
+    <GeneralContext.Provider value={{ data, setData, doSearchByUserInput }}>
+      {children}
+    </GeneralContext.Provider>
+  );
 };
 
 export default GeneralContextProvider;
