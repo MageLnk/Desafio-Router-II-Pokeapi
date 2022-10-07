@@ -40,6 +40,9 @@ a:active {
   margin: 0 0 0 2rem;
   width: 100%;
 }
+.navbar-option-active {
+  color: white;
+}
 .navbar-search-container {
   display: flex;
   justify-content: space-between;

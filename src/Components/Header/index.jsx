@@ -1,22 +1,31 @@
-import { Link } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
+// App
 const NavBar = () => {
   return (
     <div className="navbar-container">
       <div className="navbar-links-container">
-        <Link to="/">
+        <NavLink to="/">
           <span className="navbar-home">PokeDex</span>
-        </Link>
+        </NavLink>
         <div className="navbar-options">
-          <Link to="/pokemons">
-            <span>Pokemones</span>
-          </Link>
-          <Link to="favorites">
-            <span>Favoritos</span>
-          </Link>
-          <Link to="/types">
-            <span>Tipos</span>
-          </Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "navbar-option-active" : "")}
+            to="/pokemons"
+          >
+            Pokemones
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "navbar-option-active" : "")}
+            to="favorites"
+          >
+            Favoritos
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "navbar-option-active" : "")}
+            to="/types"
+          >
+            Tipos
+          </NavLink>
         </div>
       </div>
       <div className="navbar-search-container">
@@ -28,3 +37,5 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+// <span className="navbar-home">PokeDex</span>
