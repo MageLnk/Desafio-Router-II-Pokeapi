@@ -20,7 +20,7 @@ const NavBar = () => {
         <div className="navbar-options">
           <NavLink
             className={({ isActive }) => (isActive ? "navbar-option-active" : "")}
-            to="/pokemons"
+            to="/pokemons/1"
           >
             Pokemones
           </NavLink>

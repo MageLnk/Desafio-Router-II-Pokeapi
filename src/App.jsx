@@ -14,7 +14,7 @@ const App = () => {
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/pokemons" element={<Pokemons />} />
+            <Route path="/pokemons/:page" element={<Pokemons />} />
             <Route path="/favorites" element={<Favorites />} />
 
             <Route path="*" element={<Error404 />} />

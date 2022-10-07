@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 // Context
 import GeneralContext from ".";
 // Utilities
-//import apiCall from "../../api/apiCall";
+import apiCall from "../../api/apiCall";
 
 const GeneralContextProvider = ({ children }) => {
   const [data, setData] = useState("nada");
@@ -11,19 +11,19 @@ const GeneralContextProvider = ({ children }) => {
     console.log("Temporal Log, for future implement", inputData);
   };
 
-  //const exampleUseApiCall = async (userId) => {
-  //  try {
-  //    const data = await apiCall({ url: `http://insertApiAddress` });
-  //    // Insert setData(data)
-  //  } catch (e) {
-  //    alert("Un error ha ocurrido. Por favor actualice la página");
-  //  }
-  //};
+  const getAllData = async () => {
+    console.log("Perfect");
+    try {
+      const data = await apiCall({ url: `https://pokeapi.co/api/v2/pokemon?offset=0&limit=15` });
+      console.log(data);
+      // Insert setData(data)
+    } catch (e) {
+      alert("Un error ha ocurrido. Por favor actualice la página");
+    }
+  };
 
   useEffect(() => {
-    console.log(
-      "Una buen ejemplo para traer data desde una Api al momento de cargar la app, es usar el useEffect acá"
-    );
+    getAllData();
   }, []);
 
   return (
