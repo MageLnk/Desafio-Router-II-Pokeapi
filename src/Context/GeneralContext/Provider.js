@@ -5,7 +5,8 @@ import GeneralContext from ".";
 import apiCall from "../../api/apiCall";
 
 const GeneralContextProvider = ({ children }) => {
-  const [data, setData] = useState("nada");
+  const [homeData, setHomeData] = useState("");
+  //const [pokemonByPaginationData, setPokemonByPaginationData] = useState("");
   //const [offsetPokemonPageSearch, setOffsetPokemonPageSearch] = useState(0);
 
   const doSearchByUserInput = (inputData) => {
@@ -21,10 +22,10 @@ const GeneralContextProvider = ({ children }) => {
       const data = await apiCall({
         url: `https://pokeapi.co/api/v2/pokemon?offset=0&limit=15`,
       });
-      console.log(data);
+      setHomeData(data);
       // Insert setData(data)
     } catch (e) {
-      alert("Un error ha ocurrido. Por favor actualice la página");
+      alert("Un error catastrófico ha ocurrido. Por favor actualice la página");
     }
   };
 
@@ -47,7 +48,7 @@ const GeneralContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <GeneralContext.Provider value={{ data, setData, doSearchByUserInput }}>
+    <GeneralContext.Provider value={{ homeData, doSearchByUserInput }}>
       {children}
     </GeneralContext.Provider>
   );
