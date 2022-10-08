@@ -27,6 +27,9 @@ a:active {
 .favorites-pokemons-container {
   grid-area: main-content;
 }
+.pokemon-types-container {
+  grid-area: main-content;
+}
 
 .footer-container {
   grid-area: footer;
