@@ -13,14 +13,6 @@ const DeployHearth = ({ pokemonUrl }) => {
     setHandleHearth(!hearthStatus);
   };
 
-  const deployHearth = () => {
-    if (handleHearth === true) {
-      return <AiTwotoneHeart onClick={() => handleHearthStatus(handleHearth)} />;
-    } else {
-      return <AiOutlineHeart onClick={() => handleHearthStatus(handleHearth)} />;
-    }
-  };
-
   useEffect(() => {
     const bringLocalStorageData = JSON.parse(localStorage.getItem("favoritesPokemons"));
     if (!bringLocalStorageData) {
@@ -32,9 +24,17 @@ const DeployHearth = ({ pokemonUrl }) => {
       }
     });
     // eslint-disable-next-line
-  }, []);
+  }, [pokemonUrl]);
 
-  return <span className="card-pokemon-hearth-button">{deployHearth()}</span>;
+  return (
+    <span className="card-pokemon-hearth-button">
+      {handleHearth === true ? (
+        <AiTwotoneHeart onClick={() => handleHearthStatus(handleHearth)} />
+      ) : (
+        <AiOutlineHeart onClick={() => handleHearthStatus(handleHearth)} />
+      )}
+    </span>
+  );
 };
 
 export default DeployHearth;

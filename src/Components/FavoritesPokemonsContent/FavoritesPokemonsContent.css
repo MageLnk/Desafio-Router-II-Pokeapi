@@ -1,0 +1,12 @@
+.favorite-content-container {
+  width: 100%;
+  height: 100%;
+  margin: 5rem 2rem 5rem 2rem;
+}
+
+.favorite-cards-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}

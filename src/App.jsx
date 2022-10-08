@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // Context
 import GeneralContext from "./Context/GeneralContext/Provider";
 // Pages
-import { Home, Pokemons, Favorites, Search, Error404 } from "./pages";
+import { Home, Pokemons, FavoritesPokemons, Search, Error404 } from "./pages";
 // Components
 import { NavBar, Footer } from "./Components";
 
@@ -14,7 +14,7 @@ const App = () => {
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/favorites" element={<FavoritesPokemons />} />
             <Route path="/search/:name" element={<Search />} />
             <Route path="/pokemons/:page" element={<Pokemons />} />
 
