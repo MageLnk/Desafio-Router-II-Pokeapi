@@ -1,0 +1,30 @@
+.previus-and-next-buttons-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 4rem 0 4rem;
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+.previus-and-next-buttons-container button {
+  width: 8rem;
+  height: 3rem;
+  background: none;
+  color: #dc3545;
+  border: 1px #dc3545 solid;
+}
+
+.previus-and-next-buttons-container button span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 18px;
+}
+
+.previus-and-next-buttons-container button span .icons-buttons {
+  font-size: 28px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+}
