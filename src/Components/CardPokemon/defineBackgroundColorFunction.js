@@ -18,7 +18,7 @@ const defineBackgroundColor = (color) => {
     { type: "dark", color: "#705848" },
     { type: "fairy", color: "#ee99ac" },
   ];
-
+  // eslint-disable-next-line
   const findMatch = arrayColorsByType.filter((result) => {
     if (result.type === color) {
       return result;

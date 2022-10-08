@@ -49,7 +49,7 @@ const CardPokemon = ({ pokemonUrl }) => {
     GetPokemonData(pokemonUrl);
   }, [pokemonUrl]);
 
-  console.log("Dentro del component card", dataPokemon);
+  //console.log("Dentro del component card", dataPokemon);
 
   return (
     <div className="card-content-container">
