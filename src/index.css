@@ -24,6 +24,9 @@ a:active {
 .search-page-container {
   grid-area: main-content;
 }
+.favorites-pokemons-container {
+  grid-area: main-content;
+}
 
 .footer-container {
   grid-area: footer;

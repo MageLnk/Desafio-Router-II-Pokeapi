@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 import apiCall from "../../api/apiCall";
 // Style
 import { Card } from "antd";
-import { AiOutlineHeart } from "react-icons/ai";
 import "./CardPokemon.css";
 import defineBackgroundColor from "./defineBackgroundColorFunction";
-//AiTwotoneHeart
+import DeployHearth from "./DeployHearth";
 // App
 const CardPokemon = ({ pokemonUrl }) => {
   const [dataPokemon, setDataPokemon] = useState("");
@@ -20,13 +19,13 @@ const CardPokemon = ({ pokemonUrl }) => {
     }
   };
 
-  const mayusFunction = (pokeName) => {
+  const mayusFirstLetter = (pokeName) => {
     const mayusName = pokeName.charAt(0).toUpperCase() + pokeName.slice(1);
     return mayusName;
   };
 
-  const typePokemonArray = (pokeType) => {
-    const deployButtons = pokeType.types.map((info) => {
+  const deployButtons = (pokeType) => {
+    const deployButton = pokeType.types.map((info) => {
       return (
         <button
           key={info.type.name}
@@ -37,12 +36,12 @@ const CardPokemon = ({ pokemonUrl }) => {
             backgroundColor: defineBackgroundColor(info.type.name),
           }}
         >
-          {mayusFunction(info.type.name)}
+          {mayusFirstLetter(info.type.name)}
         </button>
       );
     });
 
-    return deployButtons;
+    return deployButton;
   };
 
   useEffect(() => {
@@ -67,15 +66,13 @@ const CardPokemon = ({ pokemonUrl }) => {
           <>
             <img alt="example" src={dataPokemon.sprites.other.dream_world.front_default} />
             <div className="card-preview-data-container">
-              <span className="card-pokemon-title">{mayusFunction(dataPokemon.name)}</span>
+              <span className="card-pokemon-title">{mayusFirstLetter(dataPokemon.name)}</span>
               <span className="card-pokemon-general-info">Altura: {dataPokemon.height}</span>
               <span className="card-pokemon-general-info">Peso: {dataPokemon.weight}</span>
               <span className="card-pokemon-pokedex"># {dataPokemon.id}</span>
-              <div className="card-pokemon-button-container">{typePokemonArray(dataPokemon)}</div>
+              <div className="card-pokemon-button-container">{deployButtons(dataPokemon)}</div>
               <div className="card-pokemon-hearth-container">
-                <span className="card-pokemon-hearth-button">
-                  <AiOutlineHeart />
-                </span>
+                <DeployHearth pokemonUrl={pokemonUrl} />
               </div>
             </div>
           </>
