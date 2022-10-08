@@ -23,7 +23,6 @@ const GeneralContextProvider = ({ children }) => {
         url: `https://pokeapi.co/api/v2/pokemon?offset=0&limit=15`,
       });
       setHomeData(data);
-      // Insert setData(data)
     } catch (e) {
       alert("Un error catastrófico ha ocurrido. Por favor actualice la página");
     }

@@ -3,12 +3,10 @@ import CardPokemon from "./CardPokemon";
 // App
 const PokemonDeploy = ({ dataPokemon }) => {
   const showHomeData = ({ results }) => {
-    const mapHomeData = results.map((info) => {
-      console.log("Info", info);
-      const mayusPokemonName = info.name.charAt(0).toUpperCase() + info.name.slice(1);
+    const mapHomeData = results.map((data) => {
       return (
-        <div key={info.name}>
-          <CardPokemon namePokemon={mayusPokemonName} />
+        <div key={data.name}>
+          <CardPokemon pokemonUrl={data.url} />
         </div>
       );
     });
