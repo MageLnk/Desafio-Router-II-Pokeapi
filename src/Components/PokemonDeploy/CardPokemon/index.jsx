@@ -36,7 +36,7 @@ const CardPokemon = ({ pokemonUrl }) => {
           className="card-container"
           cover={
             <>
-              <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+              <img alt="example" src={dataPokemon.sprites.other.dream_world.front_default} />
               <div className="card-preview-data-container">
                 <span className="card-pokemon-title">{mayusPokemonName(dataPokemon.name)}</span>
               </div>
