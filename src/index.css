@@ -75,36 +75,6 @@ a:active {
   margin: 6rem 2rem 6rem 2rem;
 }
 
-.pokemon-deploy-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-}
-.pokemon-deploy-container .card-container {
-  margin: 1rem 0 1rem 0;
-  width: 300px;
-}
-.ant-card-cover {
-  display: flex;
-  width: auto;
-  height: 280px;
-}
-.ant-card-cover img {
-  width: 140px;
-}
-.card-preview-data-container {
-  display: flex;
-  justify-content: flex-start;
-  padding: 1rem;
-}
-.card-pokemon-title {
-  font-size: 22px;
-}
-.ant-card-body {
-  padding: 0;
-}
-
 .footer-container {
   grid-area: footer;
   background-color: black;
