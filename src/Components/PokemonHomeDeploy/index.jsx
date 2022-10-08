@@ -1,9 +1,9 @@
 // Components
-import CardPokemon from "./CardPokemon";
+import CardPokemon from "../CardPokemon";
 // style
 import "./PokemonDeploy.css";
 // App
-const PokemonDeploy = ({ dataPokemon }) => {
+const PokemonHomeDeploy = ({ dataPokemon }) => {
   const showHomeData = ({ results }) => {
     const mapHomeData = results.map((data) => {
       return (
@@ -17,4 +17,4 @@ const PokemonDeploy = ({ dataPokemon }) => {
   return <div className="pokemon-deploy-container">{dataPokemon && showHomeData(dataPokemon)}</div>;
 };
 
-export default PokemonDeploy;
+export default PokemonHomeDeploy;

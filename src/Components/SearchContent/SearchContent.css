@@ -1,0 +1,24 @@
+.search-page-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.search-page-ask-for-search {
+  margin: 1rem;
+  font-size: 24px;
+  font-weight: 600;
+}
+.search-page-pokemon-not-found {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 1rem;
+  font-size: 24px;
+  font-weight: 600;
+}
+.search-page-pokemon-card-container {
+  width: 300px;
+  height: 300px;
+}

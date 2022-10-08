@@ -16,73 +16,17 @@ a:active {
 
 .navbar-container {
   grid-area: navbar;
-  background-color: #dc3545;
-  color: #ffffff8c;
-  padding: 0 1rem 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 17px;
-}
-.navbar-container .navbar-links-container {
-  display: flex;
-  width: 30%;
-  justify-content: space-between;
-  align-items: center;
-}
-.navbar-container .navbar-links-container .navbar-home {
-  font-size: 20px;
-  color: #ffc107;
-  font-weight: 600;
-}
-.navbar-container .navbar-links-container .navbar-options {
-  display: flex;
-  justify-content: space-around;
-  margin: 0 0 0 2rem;
-  width: 100%;
-  color: #ffffff8c;
-}
-.navbar-option-active {
-  color: white;
-}
-.navbar-search-container {
-  display: flex;
-  justify-content: space-between;
-  width: 20%;
-  height: 2.5rem;
-}
-.navbar-search-container input {
-  border-radius: 10px;
-  width: 50%;
-  margin: 0 0.5rem 0 0;
-  border: none;
-}
-.navbar-search-container button {
-  border-radius: 10px;
-  width: 50%;
-  margin: 0 0 0 0.5rem;
-  background-color: #ffc107;
-  color: black;
-  border: none;
 }
 
 .home-page-container {
   grid-area: main-content;
 }
-.home-page-container .home-content-container {
-  display: flex;
-  justify-content: center;
-  margin: 6rem 2rem 6rem 2rem;
+.search-page-container {
+  grid-area: main-content;
 }
 
 .footer-container {
   grid-area: footer;
-  background-color: black;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 2rem 0 0;
 }
 
 .app-container {
