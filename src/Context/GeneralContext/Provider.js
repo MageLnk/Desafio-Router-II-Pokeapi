@@ -7,6 +7,7 @@ import apiCall from "../../api/apiCall";
 const GeneralContextProvider = ({ children }) => {
   const [homeData, setHomeData] = useState("");
   const [pokemonData, setPokemonData] = useState("");
+  const [favoritePokemons, setFavoritePokemons] = useState([]);
   //const [pokemonByPaginationData, setPokemonByPaginationData] = useState("");
   //const [offsetPokemonPageSearch, setOffsetPokemonPageSearch] = useState(0);
 
@@ -41,6 +42,24 @@ const GeneralContextProvider = ({ children }) => {
     }
   };
 
+  const handleFavoritePokemon = (pokemonData, status) => {
+    let newPokemonArray = favoritePokemons;
+    if (status === true) {
+      newPokemonArray.push(pokemonData);
+      setFavoritePokemons([...newPokemonArray]);
+      localStorage.setItem("favoritesPokemons", JSON.stringify([...newPokemonArray]));
+    }
+    if (status === false) {
+      newPokemonArray.forEach((data, i) => {
+        if (pokemonData === data) {
+          newPokemonArray.splice(i, 1);
+          setFavoritePokemons([...newPokemonArray]);
+          localStorage.setItem("favoritesPokemons", JSON.stringify([...newPokemonArray]));
+        }
+      });
+    }
+  };
+
   //const getPokemonPagination = async (nextPagination, previusPagination) => {
   //  //validationPagination(nextPagination, previusPagination);
   //  // Temporal Logic for previus and all that
@@ -57,10 +76,22 @@ const GeneralContextProvider = ({ children }) => {
 
   useEffect(() => {
     getAllData();
+    const bringLocalStorageData = JSON.parse(localStorage.getItem("favoritesPokemons"));
+    if (bringLocalStorageData) {
+      setFavoritePokemons([...bringLocalStorageData]);
+    }
   }, []);
 
   return (
-    <GeneralContext.Provider value={{ homeData, pokemonData, doSearchByUserInput }}>
+    <GeneralContext.Provider
+      value={{
+        homeData,
+        pokemonData,
+        favoritePokemons,
+        doSearchByUserInput,
+        handleFavoritePokemon,
+      }}
+    >
       {children}
     </GeneralContext.Provider>
   );
