@@ -1,0 +1,107 @@
+@keyframes pokemon-dance {
+  0% {
+    top: 0px;
+  }
+  6.66% {
+    top: -1px;
+  }
+  13.32% {
+    top: -2px;
+  }
+  19.98% {
+    top: -3px;
+  }
+  26.64% {
+    top: -4px;
+  }
+  33.3% {
+    top: -3px;
+  }
+  39.96% {
+    top: -2px;
+  }
+  46.62% {
+    top: -1px;
+  }
+  53.28% {
+    top: 0px;
+  }
+  59.94% {
+    top: 1px;
+  }
+  66.6% {
+    top: 2px;
+  }
+  73.26% {
+    top: 3px;
+  }
+  79.92% {
+    top: 4px;
+  }
+  86.58% {
+    top: 3px;
+  }
+  93.24% {
+    top: 2px;
+  }
+  100% {
+    top: 1px;
+  }
+}
+
+.card-content-container {
+  margin: 1rem 0 1rem 0;
+}
+.ant-card-body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 300px;
+  border-radius: 6px;
+}
+.ant-card-body img {
+  width: 120px;
+  position: relative;
+  padding: 0.5rem;
+  animation: pokemon-dance 1s ease infinite;
+  filter: drop-shadow(0 0 0.5rem #000);
+}
+.card-preview-data-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.card-pokemon-title {
+  font-size: 28px;
+  font-weight: 400;
+}
+.card-pokemon-general-info {
+  font-size: 18px;
+  margin: 0.2rem 0 0.2rem 0;
+}
+.card-pokemon-pokedex {
+  font-size: 16px;
+  margin: 1.5rem 0 1.5rem 0;
+  color: #6c757d;
+}
+.card-pokemon-button-container {
+  display: flex;
+  color: white;
+}
+.card-pokemon-button-container .card-pokemon-button {
+  margin: 0rem 0.5rem 0 0.5rem;
+  padding: 0.4rem 0 0.4rem 0;
+  width: 4rem;
+}
+.card-pokemon-hearth-container {
+  text-align: end;
+  margin: 1.5rem 1rem 0 0;
+}
+.card-pokemon-hearth-button {
+  font-size: 24px;
+  cursor: pointer;
+}

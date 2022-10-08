@@ -35,7 +35,6 @@ const GeneralContextProvider = ({ children }) => {
       const data = await apiCall({
         url: `https://pokeapi.co/api/v2/pokemon?offset=0&limit=15`,
       });
-      console.log("DASFAS", data);
       setHomeData(data);
     } catch (e) {
       alert("Un error catastrófico ha ocurrido. Por favor actualice la página");
