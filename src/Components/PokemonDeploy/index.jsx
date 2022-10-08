@@ -1,5 +1,7 @@
 // Components
 import CardPokemon from "./CardPokemon";
+// style
+import "./PokemonDeploy.css";
 // App
 const PokemonDeploy = ({ dataPokemon }) => {
   const showHomeData = ({ results }) => {
