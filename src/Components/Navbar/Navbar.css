@@ -41,6 +41,7 @@
   width: 50%;
   margin: 0 0.5rem 0 0;
   border: none;
+  color: black;
 }
 .navbar-search-container button {
   border-radius: 10px;

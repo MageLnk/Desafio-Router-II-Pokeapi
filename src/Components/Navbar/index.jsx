@@ -1,17 +1,19 @@
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 // Context
 import GeneralContext from "../../Context/GeneralContext";
 // Style
 import "./Navbar.css";
 // App
 const NavBar = () => {
+  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
   const { doSearchByUserInput } = useContext(GeneralContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     doSearchByUserInput(inputValue);
     setInputValue("");
+    navigate(`/search/${inputValue}`);
   };
   return (
     <div className="navbar-container">

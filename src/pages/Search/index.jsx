@@ -1,5 +1,12 @@
+// Compontents
+import { SearchContent } from "../../Components";
+//App
 const Search = () => {
-  return <div>Search Page</div>;
+  return (
+    <div className="search-page-container">
+      <SearchContent />
+    </div>
+  );
 };
 
 export default Search;

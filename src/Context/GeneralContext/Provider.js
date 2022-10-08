@@ -6,11 +6,24 @@ import apiCall from "../../api/apiCall";
 
 const GeneralContextProvider = ({ children }) => {
   const [homeData, setHomeData] = useState("");
+  const [pokemonData, setPokemonData] = useState("");
   //const [pokemonByPaginationData, setPokemonByPaginationData] = useState("");
   //const [offsetPokemonPageSearch, setOffsetPokemonPageSearch] = useState(0);
 
-  const doSearchByUserInput = (inputData) => {
-    console.log("Temporal Log, for future implement", inputData);
+  const doSearchByUserInput = async (inputData) => {
+    const lowerCaseInput = inputData.toLowerCase();
+    try {
+      const data = await apiCall({
+        url: `https://pokeapi.co/api/v2/pokemon/${lowerCaseInput}/`,
+      });
+      if (data === undefined) {
+        setPokemonData(data);
+      } else {
+        setPokemonData(`https://pokeapi.co/api/v2/pokemon/${data.id}/`);
+      }
+    } catch (e) {
+      alert("Un error catastrófico ha ocurrido. Por favor actualice la página");
+    }
   };
 
   //const validationPagination = (next, previus) => {
@@ -22,6 +35,7 @@ const GeneralContextProvider = ({ children }) => {
       const data = await apiCall({
         url: `https://pokeapi.co/api/v2/pokemon?offset=0&limit=15`,
       });
+      console.log("DASFAS", data);
       setHomeData(data);
     } catch (e) {
       alert("Un error catastrófico ha ocurrido. Por favor actualice la página");
@@ -47,7 +61,7 @@ const GeneralContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <GeneralContext.Provider value={{ homeData, doSearchByUserInput }}>
+    <GeneralContext.Provider value={{ homeData, pokemonData, doSearchByUserInput }}>
       {children}
     </GeneralContext.Provider>
   );

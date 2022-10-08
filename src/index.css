@@ -21,6 +21,9 @@ a:active {
 .home-page-container {
   grid-area: main-content;
 }
+.search-page-container {
+  grid-area: main-content;
+}
 
 .footer-container {
   grid-area: footer;

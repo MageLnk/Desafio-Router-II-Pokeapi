@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 // apiCall
-import apiCall from "../../../api/apiCall";
+import apiCall from "../../api/apiCall";
 // Style
 import { Card } from "antd";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -25,9 +25,8 @@ const CardPokemon = ({ pokemonUrl }) => {
 
   const typePokemonArray = (pokeType) => {
     const deployButtons = pokeType.types.map((info) => {
-      console.log("Dentro??", info);
       return (
-        <button className={`card-pokemon-button ${info.type.name}`}>
+        <button key={info.type.name} className={`card-pokemon-button ${info.type.name}`}>
           {mayusFunction(info.type.name)}
         </button>
       );
