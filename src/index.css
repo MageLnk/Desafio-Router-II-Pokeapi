@@ -1,3 +1,4 @@
+@import "~antd/dist/antd.css";
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Lato:wght@300;700&display=swap");
 body {
   margin: 0;
@@ -39,6 +40,7 @@ a:active {
   justify-content: space-around;
   margin: 0 0 0 2rem;
   width: 100%;
+  color: #ffffff8c;
 }
 .navbar-option-active {
   color: white;
@@ -60,11 +62,47 @@ a:active {
   width: 50%;
   margin: 0 0 0 0.5rem;
   background-color: #ffc107;
+  color: black;
   border: none;
 }
 
 .home-page-container {
   grid-area: main-content;
+}
+.home-page-container .home-content-container {
+  display: flex;
+  justify-content: center;
+  margin: 6rem 2rem 6rem 2rem;
+}
+
+.pokemon-deploy-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+.pokemon-deploy-container .card-container {
+  margin: 1rem 0 1rem 0;
+  width: 300px;
+}
+.ant-card-cover {
+  display: flex;
+  width: auto;
+  height: 280px;
+}
+.ant-card-cover img {
+  width: 140px;
+}
+.card-preview-data-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+.card-pokemon-title {
+  font-size: 22px;
+}
+.ant-card-body {
+  padding: 0;
 }
 
 .footer-container {
