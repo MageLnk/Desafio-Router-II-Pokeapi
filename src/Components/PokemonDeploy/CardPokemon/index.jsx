@@ -3,9 +3,7 @@ const CardPokemon = ({ namePokemon }) => {
   return (
     <Card
       hoverable
-      style={{
-        width: 240,
-      }}
+      className="card-container"
       cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
     >
       {namePokemon}

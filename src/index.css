@@ -68,6 +68,22 @@ a:active {
 .home-page-container {
   grid-area: main-content;
 }
+.home-page-container .home-content-container {
+  display: flex;
+  justify-content: center;
+  margin: 6rem 2rem 6rem 2rem;
+}
+
+.pokemon-deploy-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+.pokemon-deploy-container .card-container {
+  margin: 1rem 0 1rem 0;
+  width: 240px;
+}
 
 .footer-container {
   grid-area: footer;
