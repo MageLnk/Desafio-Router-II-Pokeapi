@@ -3,6 +3,8 @@ import { useContext } from "react";
 import GeneralContext from "../../Context/GeneralContext";
 // Components
 import PokemonDeploy from "../PokemonDeploy";
+// Style
+import "./HomeContent.css";
 // App
 const HomeContent = () => {
   const { homeData } = useContext(GeneralContext);
