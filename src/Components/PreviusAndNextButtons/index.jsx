@@ -1,39 +1,50 @@
+import { useContext, useEffect } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+// Context
+import GeneralContext from "../../Context/GeneralContext";
 // Style
 import "./PreviusAndNextButtons.css";
 import { IconContext } from "react-icons";
 import { MdOutlineNavigateNext, MdNavigateBefore } from "react-icons/md";
 // App
 const PreviusAndNextButtons = () => {
+  const { handlePokemonsPagination } = useContext(GeneralContext);
   const { page } = useParams();
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
   const validateParam = (params) => {
     const numberValidation = isNaN(params);
-    if (!numberValidation === true) {
-      return +params;
-    }
     if (!numberValidation === false) {
       navigate("/error");
     }
   };
 
   const handleClick = (path, params) => {
-    let validParam = validateParam(params);
+    let numberParam = +params;
     if (pathname === "/") {
       navigate("pokemons/2");
       return;
     }
     if (path === "next") {
-      validParam = validParam + 1;
-      navigate(`/pokemons/${validParam.toString()}`);
+      numberParam = numberParam + 1;
+      navigate(`/pokemons/${numberParam.toString()}`);
+      return;
     }
     if (path === "previous") {
-      validParam = validParam - 1;
-      navigate(`/pokemons/${validParam.toString()}`);
+      numberParam = numberParam - 1;
+      navigate(`/pokemons/${numberParam.toString()}`);
+      return;
     }
   };
+
+  useEffect(() => {
+    if (page) {
+      validateParam(page);
+    }
+
+    handlePokemonsPagination(page);
+  }, [page]);
 
   return (
     <div className="previus-and-next-buttons-container">

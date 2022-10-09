@@ -59,20 +59,23 @@ const GeneralContextProvider = ({ children }) => {
     }
   };
 
-  const handlePokemonsPagination = async (nextPagination, previousPagination, actualPagination) => {
-    console.log("Viendo el next", nextPagination);
-    console.log("Viendo el previus", previousPagination);
-    console.log("Viendo el actual", actualPagination);
+  const handlePokemonsPagination = async (pokemonsPagination) => {
+    try {
+      let offsetApiCalculation = 0;
 
-    //try {
-    //  const data = await apiCall({
-    //    url: `https://pokeapi.co/api/v2/pokemon?offset=${"PAGINACIÓN-VARIABLE"}&limit=15`,
-    //  });
-    //  console.log(data);
-    //  // Insert setData(data)
-    //} catch (e) {
-    //  alert("Un error ha ocurrido. Por favor actualice la página");
-    //}
+      if (+pokemonsPagination === 1) {
+        offsetApiCalculation = 0;
+      } else {
+        offsetApiCalculation = 15 * (+pokemonsPagination - 1);
+      }
+      const data = await apiCall({
+        url: `https://pokeapi.co/api/v2/pokemon?offset=${offsetApiCalculation}&limit=15`,
+      });
+      setPokemonByPaginationData(data);
+      // Insert setData(data)
+    } catch (e) {
+      alert("Un error ha ocurrido. Por favor actualice la página");
+    }
   };
 
   useEffect(() => {
@@ -92,6 +95,7 @@ const GeneralContextProvider = ({ children }) => {
         doSearchByUserInput,
         handleFavoritePokemon,
         handlePokemonsPagination,
+        pokemonByPaginationData,
       }}
     >
       {children}
