@@ -4,7 +4,7 @@ import "./PokemonTypesContent.css";
 const PokemonTypesContent = () => {
   return (
     <div className="pokemon-types-content">
-      <div className="pokemon-types-deploy"></div>
+      <div className="pokemon-types-deploy">asdfa</div>
     </div>
   );
 };

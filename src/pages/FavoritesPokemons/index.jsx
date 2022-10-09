@@ -3,7 +3,7 @@ import { FavoritesPokemonsContent } from "../../Components";
 // App
 const FavoritesPokemons = () => {
   return (
-    <div className="favorites-pokemons-container">
+    <div className="favorites-pokemons-page-container">
       <FavoritesPokemonsContent />
     </div>
   );

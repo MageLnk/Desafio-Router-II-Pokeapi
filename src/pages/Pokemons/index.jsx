@@ -1,15 +1,12 @@
-//import { useContext } from "react";
-//import { useParams } from "react-router-dom";
-// Context
-//import GeneralContext from "../../Context/GeneralContext";
+// Component
+import { PokemonsContent } from "../../Components";
 // App
 const Pokemons = () => {
-  //const { page } = useParams();
-  //const { getPokemonPagination } = useContext(GeneralContext);
-  //useEffect(() => {
-  //  getPokemonPagination(page);
-  //}, [page]);
-  return <div>Pokemons</div>;
+  return (
+    <div className="pokemons-page-container">
+      <PokemonsContent />
+    </div>
+  );
 };
 
 export default Pokemons;

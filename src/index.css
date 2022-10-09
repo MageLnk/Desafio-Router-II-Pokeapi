@@ -24,10 +24,13 @@ a:active {
 .search-page-container {
   grid-area: main-content;
 }
-.favorites-pokemons-container {
+.favorites-pokemons-page-container {
   grid-area: main-content;
 }
-.pokemon-types-container {
+.pokemon-types-page-container {
+  grid-area: main-content;
+}
+.pokemons-page-container {
   grid-area: main-content;
 }
 
