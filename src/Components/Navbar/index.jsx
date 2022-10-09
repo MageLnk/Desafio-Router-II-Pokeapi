@@ -5,12 +5,15 @@ import GeneralContext from "../../Context/GeneralContext";
 // Style
 import "./Navbar.css";
 // App
-const NavBar = () => {
+const Navbar = () => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
   const { doSearchByUserInput } = useContext(GeneralContext);
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (inputValue === "") {
+      return;
+    }
     doSearchByUserInput(inputValue);
     setInputValue("");
     navigate(`/search/${inputValue}`);
@@ -60,4 +63,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;

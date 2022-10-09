@@ -1,5 +1,4 @@
 export { default as Footer } from "./Footer";
-export { default as NavBar } from "./Navbar";
-export { default as HomeContent } from "./HomeContent";
-export { default as SearchContent } from "./SearchContent";
-export { default as FavoritesPokemonsContent } from "./FavoritesPokemonsContent";
+export { default as Navbar } from "./Navbar";
+export { default as CardPokemon } from "./CardPokemon";
+export { default as PreviusAndNextButtons } from "./PreviusAndNextButtons";

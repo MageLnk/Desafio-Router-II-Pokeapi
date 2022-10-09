@@ -1,5 +1,5 @@
 // Components
-import CardPokemon from "../CardPokemon";
+import CardPokemon from "../../../CardPokemon";
 // style
 import "./PokemonDeploy.css";
 // App

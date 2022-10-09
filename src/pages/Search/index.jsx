@@ -1,5 +1,5 @@
 // Compontents
-import { SearchContent } from "../../Components";
+import { SearchContent } from "../../Components/ContentComponets";
 //App
 const Search = () => {
   return (

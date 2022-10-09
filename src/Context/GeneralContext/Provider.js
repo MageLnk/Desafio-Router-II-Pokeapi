@@ -8,8 +8,7 @@ const GeneralContextProvider = ({ children }) => {
   const [homeData, setHomeData] = useState("");
   const [pokemonData, setPokemonData] = useState("");
   const [favoritePokemons, setFavoritePokemons] = useState([]);
-  //const [pokemonByPaginationData, setPokemonByPaginationData] = useState("");
-  //const [offsetPokemonPageSearch, setOffsetPokemonPageSearch] = useState(0);
+  const [pokemonByPaginationData, setPokemonByPaginationData] = useState("");
 
   const doSearchByUserInput = async (inputData) => {
     const lowerCaseInput = inputData.toLowerCase();
@@ -60,19 +59,24 @@ const GeneralContextProvider = ({ children }) => {
     }
   };
 
-  //const getPokemonPagination = async (nextPagination, previusPagination) => {
-  //  //validationPagination(nextPagination, previusPagination);
-  //  // Temporal Logic for previus and all that
-  //  try {
-  //    const data = await apiCall({
-  //      url: `https://pokeapi.co/api/v2/pokemon?offset=${offsetPokemonPageSearch}&limit=15`,
-  //    });
-  //    console.log(data);
-  //    // Insert setData(data)
-  //  } catch (e) {
-  //    alert("Un error ha ocurrido. Por favor actualice la página");
-  //  }
-  //};
+  const handlePokemonsPagination = async (pokemonsPagination) => {
+    try {
+      let offsetApiCalculation = 0;
+
+      if (+pokemonsPagination === 1) {
+        offsetApiCalculation = 0;
+      } else {
+        offsetApiCalculation = 15 * (+pokemonsPagination - 1);
+      }
+      const data = await apiCall({
+        url: `https://pokeapi.co/api/v2/pokemon?offset=${offsetApiCalculation}&limit=15`,
+      });
+      setPokemonByPaginationData(data);
+      // Insert setData(data)
+    } catch (e) {
+      alert("Un error ha ocurrido. Por favor actualice la página");
+    }
+  };
 
   useEffect(() => {
     getAllData();
@@ -90,6 +94,8 @@ const GeneralContextProvider = ({ children }) => {
         favoritePokemons,
         doSearchByUserInput,
         handleFavoritePokemon,
+        handlePokemonsPagination,
+        pokemonByPaginationData,
       }}
     >
       {children}
@@ -98,3 +104,15 @@ const GeneralContextProvider = ({ children }) => {
 };
 
 export default GeneralContextProvider;
+
+/*
+
+Me faltan 3 cosas.
+
+- Terminar la paginación de pokemones.
+- Terminar la vista de tipos y su respectiva sub-ruta para ver ese tipo de pokemon.
+- Hacer el popup de las cartas de los pokemon
+
+NOTA: Si quieres y hay ganas, hacer responsiva la página respecto a las cartas y el navbar
+
+*/

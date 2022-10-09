@@ -4,7 +4,7 @@ import apiCall from "../../api/apiCall";
 // Style
 import { Card } from "antd";
 import "./CardPokemon.css";
-import defineBackgroundColor from "./defineBackgroundColorFunction";
+import defineBackgroundColor from "../../utilities/defineBackgroundColorFunction";
 import DeployHearth from "./DeployHearth";
 // App
 const CardPokemon = ({ pokemonUrl }) => {
