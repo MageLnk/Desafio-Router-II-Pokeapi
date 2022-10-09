@@ -37,13 +37,12 @@ const PreviusAndNextButtons = () => {
       return;
     }
   };
-
   useEffect(() => {
     if (page) {
       validateParam(page);
     }
-
     handlePokemonsPagination(page);
+    // eslint-disable-next-line
   }, [page]);
 
   return (
