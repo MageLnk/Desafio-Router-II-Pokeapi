@@ -13,6 +13,18 @@
   color: #dc3545;
   border: 1px #dc3545 solid;
 }
+.previus-and-next-buttons-container button:hover {
+  cursor: pointer;
+  background-color: #dc3546a9;
+  color: white;
+}
+.previus-and-next-buttons-container button:disabled,
+button[disabled] {
+  border: 1px #dc3545 solid;
+
+  background-color: #cccccc7c;
+  color: #666666;
+}
 
 .previus-and-next-buttons-container button span {
   display: flex;
