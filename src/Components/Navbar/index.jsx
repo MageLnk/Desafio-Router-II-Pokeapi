@@ -11,6 +11,9 @@ const Navbar = () => {
   const { doSearchByUserInput } = useContext(GeneralContext);
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (inputValue === "") {
+      return;
+    }
     doSearchByUserInput(inputValue);
     setInputValue("");
     navigate(`/search/${inputValue}`);
