@@ -1,5 +1,5 @@
 // Component
-import { FavoritesPokemonsContent } from "../../Components";
+import { FavoritesPokemonsContent } from "../../Components/ContentComponets";
 // App
 const FavoritesPokemons = () => {
   return (

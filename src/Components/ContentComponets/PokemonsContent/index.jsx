@@ -1,6 +1,6 @@
 // Components
-import CardPokemon from "../CardPokemon";
-import PreviusAndNextButtons from "../PreviusAndNextButtons";
+import CardPokemon from "../../CardPokemon";
+import PreviusAndNextButtons from "../../PreviusAndNextButtons";
 // Style
 import "./PokemonsContent.css";
 // App

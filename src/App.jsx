@@ -4,14 +4,14 @@ import GeneralContext from "./Context/GeneralContext/Provider";
 // Pages
 import { Home, Pokemons, FavoritesPokemons, Search, Error404, PokemonTypes } from "./pages";
 // Components
-import { NavBar, Footer } from "./Components";
+import { Navbar, Footer } from "./Components";
 
 const App = () => {
   return (
     <GeneralContext>
       <div className="app-container">
         <BrowserRouter>
-          <NavBar />
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/favorites" element={<FavoritesPokemons />} />

@@ -1,4 +1,4 @@
-import { PokemonTypesContent } from "../../Components/";
+import { PokemonTypesContent } from "../../Components/ContentComponets";
 
 const PokemonTypes = () => {
   return (

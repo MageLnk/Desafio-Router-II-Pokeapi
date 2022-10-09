@@ -1,9 +1,9 @@
 import { useContext } from "react";
 // Context
-import GeneralContext from "../../Context/GeneralContext";
+import GeneralContext from "../../../Context/GeneralContext";
 // Components
-import PokemonHomeDeploy from "../PokemonHomeDeploy";
-import PreviusAndNextButtons from "../PreviusAndNextButtons";
+import PokemonHomeDeploy from "./PokemonHomeDeploy";
+import PreviusAndNextButtons from "../../PreviusAndNextButtons";
 // Style
 import "./HomeContent.css";
 // App

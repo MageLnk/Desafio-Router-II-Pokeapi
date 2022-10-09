@@ -1,7 +1,7 @@
 import { useContext } from "react";
 // Style
-import GeneralContext from "../../Context/GeneralContext";
-import CardPokemon from "../CardPokemon";
+import GeneralContext from "../../../Context/GeneralContext";
+import { CardPokemon } from "../../";
 // Context
 import "./FavoritesPokemonsContent.css";
 // App

@@ -1,5 +1,5 @@
 // Component
-import { PokemonsContent } from "../../Components";
+import { PokemonsContent } from "../../Components/ContentComponets";
 // App
 const Pokemons = () => {
   return (

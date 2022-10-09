@@ -5,7 +5,7 @@ import GeneralContext from "../../Context/GeneralContext";
 // Style
 import "./Navbar.css";
 // App
-const NavBar = () => {
+const Navbar = () => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
   const { doSearchByUserInput } = useContext(GeneralContext);
@@ -60,4 +60,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;
