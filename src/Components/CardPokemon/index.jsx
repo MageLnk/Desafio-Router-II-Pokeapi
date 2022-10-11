@@ -4,7 +4,7 @@ import apiCall from "../../api/apiCall";
 // Style
 import { Card } from "antd";
 import "./CardPokemon.css";
-import defineBackgroundColor from "../../utilities/defineBackgroundColorFunction";
+import { defineBackgroundColor, mayusFirstLetter } from "../../utilities";
 import DeployHearth from "./DeployHearth";
 // App
 const CardPokemon = ({ pokemonUrl }) => {
@@ -17,11 +17,6 @@ const CardPokemon = ({ pokemonUrl }) => {
     } catch (e) {
       alert("Un error catastrófico ha ocurrido. Por favor actualice la página");
     }
-  };
-
-  const mayusFirstLetter = (pokeName) => {
-    const mayusName = pokeName.charAt(0).toUpperCase() + pokeName.slice(1);
-    return mayusName;
   };
 
   const deployButtons = (pokeType) => {
@@ -47,8 +42,6 @@ const CardPokemon = ({ pokemonUrl }) => {
   useEffect(() => {
     GetPokemonData(pokemonUrl);
   }, [pokemonUrl]);
-
-  //console.log("Dentro del component card", dataPokemon);
 
   return (
     <div className="card-content-container">

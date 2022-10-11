@@ -9,4 +9,24 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
+  margin: 1rem 0 0 0;
+  
+}
+
+.ant-card {
+  margin: 2rem 0 2rem 0;
+}
+
+.pokemon-types-deploy .ant-card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 10rem;
+  height: 15rem;
+}
+.pokemon-types-deploy .ant-card-body span {
+  font-size: 36px;
+  filter: drop-shadow(0 0 0.25rem #fff);
+
 }

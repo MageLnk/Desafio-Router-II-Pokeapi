@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 // Context
-import GeneralContext from ".";
+import GeneralContext from "./";
 // Utilities
 import apiCall from "../../api/apiCall";
 
@@ -25,10 +25,6 @@ const GeneralContextProvider = ({ children }) => {
       alert("Un error catastrófico ha ocurrido. Por favor actualice la página");
     }
   };
-
-  //const validationPagination = (next, previus) => {
-  //  console.log("next", next, "previus", previus);
-  //};
 
   const getAllData = async () => {
     try {
@@ -72,7 +68,6 @@ const GeneralContextProvider = ({ children }) => {
         url: `https://pokeapi.co/api/v2/pokemon?offset=${offsetApiCalculation}&limit=15`,
       });
       setPokemonByPaginationData(data);
-      // Insert setData(data)
     } catch (e) {
       alert("Un error ha ocurrido. Por favor actualice la página");
     }
@@ -107,9 +102,8 @@ export default GeneralContextProvider;
 
 /*
 
-Me faltan 3 cosas.
+Me faltan 2 cosas.
 
-- Terminar la paginación de pokemones.
 - Terminar la vista de tipos y su respectiva sub-ruta para ver ese tipo de pokemon.
 - Hacer el popup de las cartas de los pokemon
 
