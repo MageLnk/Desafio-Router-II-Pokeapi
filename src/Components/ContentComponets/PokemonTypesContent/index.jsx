@@ -23,8 +23,8 @@ const PokemonTypesContent = () => {
   const deployPokemonTypes = ({ results }) => {
     const returnTypes = results.map((types) => {
       return (
-        <div style={{ margin: "1rem 0 1rem 0" }}>
-          <Card key={types.name} bodyStyle={{ backgroundColor: defineBackgroundColor(types.name) }}>
+        <div key={types.name} style={{ margin: "1rem 0 1rem 0" }}>
+          <Card bodyStyle={{ backgroundColor: defineBackgroundColor(types.name) }}>
             <span>{mayusFirstLetter(types.name)}</span>
           </Card>
         </div>
