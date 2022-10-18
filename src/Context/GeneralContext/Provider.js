@@ -109,7 +109,6 @@ export default GeneralContextProvider;
 
 Me faltan 3 cosas.
 
-- Terminar la paginación de pokemones.
 - Terminar la vista de tipos y su respectiva sub-ruta para ver ese tipo de pokemon.
 - Hacer el popup de las cartas de los pokemon
 
